@@ -15,9 +15,26 @@
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "release": "release-it"
   },
-  "dependencies": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "release-it": {
+    "github": {
+      "release": true,
+      "releaseName": "Release ${version}",
+      "tokenRef": "GITHUB_TOKEN"
+    },
+    "npm": {
+      "access": "public",
+      "skipChecks": true
+    }
+  },
+  "dependencies": {
+    "release-it": "^13.6.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
@@ -28,7 +45,6 @@
     "@vue/cli-service": "^4.3.1",
     "cross-env": "^7.0.2",
     "minimist": "^1.2.5",
-    "release-it": "^13.6.1",
     "rollup": "^2.7.3",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^5.3.0",
