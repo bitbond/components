@@ -11,7 +11,7 @@ yarn add @bitbond/components
 
 Add it as a plugin in your Vue project, e.g. create a file like `bitbond/components.js` in your plugins folder and add the following to it's contents:
 ```javascript
-// plugins/glue.js
+// plugins/bitbond/components.js
 import Vue from 'vue'
 import bbComponents from '@bitbond/components'
 
