@@ -16,16 +16,13 @@
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
-    "prerelease": "./bin/pre-release.sh",
+    "prerelease": "yarn build && ./bin/pre-release.sh",
     "release": "release-it"
   },
   "publishConfig": {
     "access": "public"
   },
   "release-it": {
-    "hooks": {
-      "before:init": ["yarn build"]
-    },
     "github": {
       "release": true,
       "releaseName": "Release ${version}",
