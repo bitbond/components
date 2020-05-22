@@ -23,7 +23,7 @@
   },
   "release-it": {
     "hooks": {
-      "before:init": "./scripts/pre-release.sh"
+      "before:init": "./bin/pre-release.sh"
     },
     "github": {
       "release": true,
