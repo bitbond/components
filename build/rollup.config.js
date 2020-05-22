@@ -70,7 +70,7 @@ if (!argv.format || argv.format === 'es') {
     ...baseConfig,
     external,
     output: {
-      file: 'dist/@bitbond/components.esm.js',
+      file: 'dist/components.esm.js',
       format: 'esm',
       exports: 'named',
     },
@@ -104,7 +104,7 @@ if (!argv.format || argv.format === 'cjs') {
     external,
     output: {
       compact: true,
-      file: 'dist/@bitbond/components.ssr.js',
+      file: 'dist/components.ssr.js',
       format: 'cjs',
       name: 'bbComponents',
       exports: 'named',
@@ -133,7 +133,7 @@ if (!argv.format || argv.format === 'iife') {
     external,
     output: {
       compact: true,
-      file: 'dist/@bitbond/components.min.js',
+      file: 'dist/components.min.js',
       format: 'iife',
       name: 'bbComponents',
       exports: 'named',
