@@ -41,9 +41,6 @@ The `bb-icon` component takes a `name` prop and applies that as a class to an un
 
 Please see [bbIcon.vue](/src/components/bbIcon.vue) for more information.
 
-## Components
-
-
 ## Development
 ```
 yarn install
