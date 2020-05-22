@@ -39,7 +39,7 @@ The `bb-icon` component takes a `name` prop and applies that as a class to an un
 <bb-icon name="fas fa-user-circle" />
 ```
 
-Please see [bbIcon.vue](/src/lib-components/bbIcon.vue) for more information.
+Please see [bbIcon.vue](/src/components/bbIcon.vue) for more information.
 
 ## Components
 
