@@ -31,7 +31,6 @@
       "tokenRef": "GITHUB_TOKEN"
     },
     "npm": {
-      "access": "public",
       "skipChecks": true
     }
   },
