@@ -24,7 +24,7 @@
   },
   "release-it": {
     "hooks": {
-      "before:init": "yarn prerelease"
+      "before:init": "yarn build && yarn prerelease"
     },
     "github": {
       "release": true,
