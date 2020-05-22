@@ -22,6 +22,9 @@
     "access": "public"
   },
   "release-it": {
+    "hooks": {
+      "before:init": "./scripts/pre-release.sh"
+    },
     "github": {
       "release": true,
       "releaseName": "Release ${version}",
