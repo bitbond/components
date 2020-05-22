@@ -97,6 +97,10 @@ export default {
           vm.$emit('input', event.target.value)
           if (this.validateOn === 'input') vm.validate(event.target.value)
         },
+        paste: event => {
+          vm.$emit('input', event.target.value)
+          if (this.validateOn === 'input') vm.validate(event.target.value)
+        },
         focus: () => {
           vm.$emit('focus')
           vm.focussed = true

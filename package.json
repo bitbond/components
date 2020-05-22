@@ -2,16 +2,16 @@
   "name": "@bitbond/components",
   "version": "1.0.0",
   "description": "Bitbond vue components",
-  "main": "dist/@bitbond/components.ssr.js",
-  "browser": "dist/@bitbond/components.esm.js",
-  "module": "dist/@bitbond/components.esm.js",
-  "unpkg": "dist/@bitbond/components.min.js",
+  "main": "dist/components.ssr.js",
+  "browser": "dist/components.esm.js",
+  "module": "dist/components.esm.js",
+  "unpkg": "dist/components.min.js",
   "files": [
     "dist/*",
     "src/**/*.vue"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve dev/serve.js",
+    "dev": "vue-cli-service serve dev/index.js",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
@@ -49,6 +49,7 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-vue": "^5.1.6",
+    "tailwindcss": "^1.4.6",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
