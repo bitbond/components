@@ -1,6 +1,6 @@
 {
   "name": "@bitbond/components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Bitbond vue components",
   "main": "dist/components.ssr.js",
   "browser": "dist/components.esm.js",
