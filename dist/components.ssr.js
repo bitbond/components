@@ -1040,14 +1040,8 @@ var __vue_component__$3 = /*#__PURE__*/normalizeComponent({
 //
 //
 //
-//
-//
-//
-//
-//
-//
 var script$4 = {
-  name: 'bbSelectInput',
+  name: "bbSelectInput",
   props: {
     options: {
       type: Array,
@@ -1055,7 +1049,7 @@ var script$4 = {
     },
     value: {
       type: [String, Number],
-      default: ''
+      default: ""
     },
     label: {
       type: String,
@@ -1063,7 +1057,7 @@ var script$4 = {
     },
     name: {
       type: String,
-      default: 'select'
+      default: "select"
     },
     required: {
       type: Boolean,
@@ -1074,13 +1068,13 @@ var script$4 = {
     },
     validateOn: {
       type: String,
-      default: 'change'
+      default: "change"
     },
     size: {
       type: String,
-      default: 'medium',
+      default: "medium",
       validator: function validator(value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1;
+        return ["small", "medium", "large"].indexOf(value) !== -1;
       }
     }
   },
@@ -1093,8 +1087,8 @@ var script$4 = {
     listeners: function listeners() {
       var vm = this;
       return _objectSpread2(_objectSpread2({}, this.$listeners), {}, {
-        change: function change(event) {
-          vm.$emit('input', event.target.value);
+        input: function input(event) {
+          vm.$emit("input", event.target.value);
           vm.validate(event.target.value);
         }
       });
@@ -1104,55 +1098,55 @@ var script$4 = {
     },
     textSize: function textSize() {
       switch (this.size) {
-        case 'large':
-          return 'text-lg';
+        case "large":
+          return "text-lg";
 
-        case 'small':
-          return 'text-sm';
+        case "small":
+          return "text-sm";
 
         default:
-          return 'text-base';
+          return "text-base";
       }
     },
     inputClasses: function inputClasses() {
       return [this.bgClasses, this.shapeClasses, this.sizeClasses, this.borderClasses, this.textColorClasses, this.textClasses, this.cursorClasses, this.textSize];
     },
     bgClasses: function bgClasses() {
-      if (this.hasError) return 'bg-red-100';
-      if (this.focussed) return 'bg-gray-100';
-      return 'bg-gray-300';
+      if (this.hasError) return "bg-red-100";
+      if (this.focussed) return "bg-gray-100";
+      return "bg-gray-300";
     },
     borderClasses: function borderClasses() {
-      if (this.hasError) return 'border border-red-500';
-      return 'border border-gray-300';
+      if (this.hasError) return "border border-red-500";
+      return "border border-gray-300";
     },
     shapeClasses: function shapeClasses() {
-      return 'rounded';
+      return "rounded";
     },
     sizeClasses: function sizeClasses() {
       switch (this.size) {
-        case 'large':
-          return 'h-16 px-4';
+        case "large":
+          return "h-16 px-4";
 
-        case 'small':
-          return 'h-8 px-4';
+        case "small":
+          return "h-8 px-4";
 
         default:
-          return 'h-10 px-4';
+          return "h-10 px-4";
       }
     },
     textColorClasses: function textColorClasses() {
-      if (this.hasError) return 'text-red-500';
-      return '';
+      if (this.hasError) return "text-red-500";
+      return "";
     },
     textClasses: function textClasses() {
-      if (this.disabled) return 'text-gray-600';
-      if (this.uppercase) return 'uppercase';
-      return '';
+      if (this.disabled) return "text-gray-600";
+      if (this.uppercase) return "uppercase";
+      return "";
     },
     cursorClasses: function cursorClasses() {
-      if (this.disabled) return 'cursor-not-allowed';
-      return '';
+      if (this.disabled) return "cursor-not-allowed";
+      return "";
     },
     labelClasses: function labelClasses() {
       return [this.textSize];
@@ -1160,11 +1154,11 @@ var script$4 = {
   },
   methods: {
     valFor: function valFor(option) {
-      if (typeof option === 'string' || option instanceof String) return option;
+      if (typeof option === "string" || option instanceof String) return option;
       return option.value;
     },
     textFor: function textFor(option) {
-      if (typeof option === 'string' || option instanceof String) return option;
+      if (typeof option === "string" || option instanceof String) return option;
       return option.text;
     },
     validate: function validate(val) {
@@ -1173,7 +1167,7 @@ var script$4 = {
       this.errors = [];
       if (this.rules && this.rules.length > 0) this.rules.forEach(function (rule) {
         var result = rule(val);
-        if (typeof result === 'string') _this.errors.push(result);
+        if (typeof result === "string") _this.errors.push(result);
       });
     }
   }
@@ -1190,11 +1184,11 @@ var __vue_render__$4 = function __vue_render__() {
 
   return _c('div', {
     staticClass: "flex flex-col mb-6"
-  }, [_vm.label ? _vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.name) + _vm._ssrClass(null, _vm.labelClasses) + " data-v-394452af>", "</label>", [_vm._ssrNode(_vm._ssrEscape(_vm._s(_vm.label) + "\n    ") + (_vm.required ? "<span data-v-394452af>*</span>" : "<!---->"))], 2) : _vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.name) + _vm._ssrClass(null, _vm.labelClasses) + " data-v-394452af>", "</label>", [_vm._t("label")], 2), _vm._ssrNode(" <select" + _vm._ssrAttr("name", _vm.name) + _vm._ssrAttr("value", _vm.value) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, ['bb-select-input w-full leading-none'].concat(_vm.inputClasses)) + " data-v-394452af>" + _vm._ssrList(_vm.options, function (option, i) {
-    return "<option" + _vm._ssrAttr("value", _vm.valFor(option)) + " data-v-394452af>" + _vm._ssrEscape("\n      " + _vm._s(_vm.textFor(option)) + "\n    ") + "</option>";
-  }) + "</select> <div" + _vm._ssrClass(null, ['relative', _vm.labelClasses]) + " data-v-394452af><div class=\"text-red-500 text-sm absolute\"" + _vm._ssrStyle(null, null, {
+  }, [_vm.label ? _vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.name) + _vm._ssrClass(null, _vm.labelClasses) + " data-v-5088bd29>", "</label>", [_vm._ssrNode(_vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n    ") + (_vm.required ? "<span data-v-5088bd29>*</span>" : "<!---->"))], 2) : _vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.name) + _vm._ssrClass(null, _vm.labelClasses) + " data-v-5088bd29>", "</label>", [_vm._t("label")], 2), _vm._ssrNode(" <select" + _vm._ssrAttr("name", _vm.name) + _vm._ssrAttr("value", _vm.value) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, ['bb-select-input w-full leading-none'].concat(_vm.inputClasses)) + " data-v-5088bd29>" + _vm._ssrList(_vm.options, function (option, i) {
+    return "<option" + _vm._ssrAttr("value", _vm.valFor(option)) + " data-v-5088bd29>" + _vm._ssrEscape(_vm._s(_vm.textFor(option))) + "</option>";
+  }) + "</select> <div" + _vm._ssrClass(null, ['relative', _vm.labelClasses]) + " data-v-5088bd29><div class=\"text-red-500 text-sm absolute\"" + _vm._ssrStyle(null, null, {
     display: _vm.hasError ? '' : 'none'
-  }) + " data-v-394452af>" + _vm._ssrEscape("\n      " + _vm._s(_vm.errors[0]) + "\n    ") + "</div></div>")], 2);
+  }) + " data-v-5088bd29>" + _vm._ssrEscape(_vm._s(_vm.errors[0])) + "</div></div>")], 2);
 };
 
 var __vue_staticRenderFns__$4 = [];
@@ -1202,8 +1196,8 @@ var __vue_staticRenderFns__$4 = [];
 
 var __vue_inject_styles__$4 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-394452af_0", {
-    source: ".bb-select-input[data-v-394452af]{display:block;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}.bb-select-input[data-v-394452af]:active,.bb-select-input[data-v-394452af]:focus{-moz-appearance:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}",
+  inject("data-v-5088bd29_0", {
+    source: ".bb-select-input[data-v-5088bd29]{display:block;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}.bb-select-input[data-v-5088bd29]:active,.bb-select-input[data-v-5088bd29]:focus{-moz-appearance:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}",
     map: undefined,
     media: undefined
   });
@@ -1211,10 +1205,10 @@ var __vue_inject_styles__$4 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$4 = "data-v-394452af";
+var __vue_scope_id__$4 = "data-v-5088bd29";
 /* module identifier */
 
-var __vue_module_identifier__$4 = "data-v-394452af";
+var __vue_module_identifier__$4 = "data-v-5088bd29";
 /* functional template */
 
 var __vue_is_functional_template__$4 = false;

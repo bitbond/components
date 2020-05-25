@@ -1030,14 +1030,8 @@ const __vue_component__$3 = /*#__PURE__*/normalizeComponent({
 //
 //
 //
-//
-//
-//
-//
-//
-//
 var script$4 = {
-  name: 'bbSelectInput',
+  name: "bbSelectInput",
   props: {
     options: {
       type: Array,
@@ -1045,7 +1039,7 @@ var script$4 = {
     },
     value: {
       type: [String, Number],
-      default: ''
+      default: ""
     },
     label: {
       type: String,
@@ -1053,7 +1047,7 @@ var script$4 = {
     },
     name: {
       type: String,
-      default: 'select'
+      default: "select"
     },
     required: {
       type: Boolean,
@@ -1064,12 +1058,12 @@ var script$4 = {
     },
     validateOn: {
       type: String,
-      default: 'change'
+      default: "change"
     },
     size: {
       type: String,
-      default: 'medium',
-      validator: value => ['small', 'medium', 'large'].indexOf(value) !== -1
+      default: "medium",
+      validator: value => ["small", "medium", "large"].indexOf(value) !== -1
     }
   },
 
@@ -1083,8 +1077,8 @@ var script$4 = {
     listeners() {
       let vm = this;
       return { ...this.$listeners,
-        change: event => {
-          vm.$emit('input', event.target.value);
+        input: event => {
+          vm.$emit("input", event.target.value);
           vm.validate(event.target.value);
         }
       };
@@ -1096,14 +1090,14 @@ var script$4 = {
 
     textSize() {
       switch (this.size) {
-        case 'large':
-          return 'text-lg';
+        case "large":
+          return "text-lg";
 
-        case 'small':
-          return 'text-sm';
+        case "small":
+          return "text-sm";
 
         default:
-          return 'text-base';
+          return "text-base";
       }
     },
 
@@ -1112,47 +1106,47 @@ var script$4 = {
     },
 
     bgClasses() {
-      if (this.hasError) return 'bg-red-100';
-      if (this.focussed) return 'bg-gray-100';
-      return 'bg-gray-300';
+      if (this.hasError) return "bg-red-100";
+      if (this.focussed) return "bg-gray-100";
+      return "bg-gray-300";
     },
 
     borderClasses() {
-      if (this.hasError) return 'border border-red-500';
-      return 'border border-gray-300';
+      if (this.hasError) return "border border-red-500";
+      return "border border-gray-300";
     },
 
     shapeClasses() {
-      return 'rounded';
+      return "rounded";
     },
 
     sizeClasses() {
       switch (this.size) {
-        case 'large':
-          return 'h-16 px-4';
+        case "large":
+          return "h-16 px-4";
 
-        case 'small':
-          return 'h-8 px-4';
+        case "small":
+          return "h-8 px-4";
 
         default:
-          return 'h-10 px-4';
+          return "h-10 px-4";
       }
     },
 
     textColorClasses() {
-      if (this.hasError) return 'text-red-500';
-      return '';
+      if (this.hasError) return "text-red-500";
+      return "";
     },
 
     textClasses() {
-      if (this.disabled) return 'text-gray-600';
-      if (this.uppercase) return 'uppercase';
-      return '';
+      if (this.disabled) return "text-gray-600";
+      if (this.uppercase) return "uppercase";
+      return "";
     },
 
     cursorClasses() {
-      if (this.disabled) return 'cursor-not-allowed';
-      return '';
+      if (this.disabled) return "cursor-not-allowed";
+      return "";
     },
 
     labelClasses() {
@@ -1162,12 +1156,12 @@ var script$4 = {
   },
   methods: {
     valFor(option) {
-      if (typeof option === 'string' || option instanceof String) return option;
+      if (typeof option === "string" || option instanceof String) return option;
       return option.value;
     },
 
     textFor(option) {
-      if (typeof option === 'string' || option instanceof String) return option;
+      if (typeof option === "string" || option instanceof String) return option;
       return option.text;
     },
 
@@ -1175,7 +1169,7 @@ var script$4 = {
       this.errors = [];
       if (this.rules && this.rules.length > 0) this.rules.forEach(rule => {
         let result = rule(val);
-        if (typeof result === 'string') this.errors.push(result);
+        if (typeof result === "string") this.errors.push(result);
       });
     }
 
@@ -1200,7 +1194,7 @@ var __vue_render__$4 = function () {
     attrs: {
       "for": _vm.name
     }
-  }, [_vm._v(_vm._s(_vm.label) + "\n    "), _vm.required ? _c('span', [_vm._v("*")]) : _vm._e()]) : _c('label', {
+  }, [_vm._v("\n    " + _vm._s(_vm.label) + "\n    "), _vm.required ? _c('span', [_vm._v("*")]) : _vm._e()]) : _c('label', {
     class: _vm.labelClasses,
     attrs: {
       "for": _vm.name
@@ -1219,7 +1213,7 @@ var __vue_render__$4 = function () {
       domProps: {
         "value": _vm.valFor(option)
       }
-    }, [_vm._v("\n      " + _vm._s(_vm.textFor(option)) + "\n    ")]);
+    }, [_vm._v(_vm._s(_vm.textFor(option)))]);
   }), 0), _vm._v(" "), _c('div', {
     class: ['relative', _vm.labelClasses]
   }, [_c('div', {
@@ -1230,7 +1224,7 @@ var __vue_render__$4 = function () {
       expression: "hasError"
     }],
     staticClass: "text-red-500 text-sm absolute"
-  }, [_vm._v("\n      " + _vm._s(_vm.errors[0]) + "\n    ")])])]);
+  }, [_vm._v(_vm._s(_vm.errors[0]))])])]);
 };
 
 var __vue_staticRenderFns__$4 = [];
@@ -1238,8 +1232,8 @@ var __vue_staticRenderFns__$4 = [];
 
 const __vue_inject_styles__$4 = function (inject) {
   if (!inject) return;
-  inject("data-v-394452af_0", {
-    source: ".bb-select-input[data-v-394452af]{display:block;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}.bb-select-input[data-v-394452af]:active,.bb-select-input[data-v-394452af]:focus{-moz-appearance:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}",
+  inject("data-v-5088bd29_0", {
+    source: ".bb-select-input[data-v-5088bd29]{display:block;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}.bb-select-input[data-v-5088bd29]:active,.bb-select-input[data-v-5088bd29]:focus{-moz-appearance:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}",
     map: undefined,
     media: undefined
   });
@@ -1247,7 +1241,7 @@ const __vue_inject_styles__$4 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$4 = "data-v-394452af";
+const __vue_scope_id__$4 = "data-v-5088bd29";
 /* module identifier */
 
 const __vue_module_identifier__$4 = undefined;
