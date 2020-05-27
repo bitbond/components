@@ -21,6 +21,7 @@
     "release": "release-it"
   },
   "publishConfig": {
+    "access": "restricted",
     "registry": "https://npm.pkg.github.com/bitbond"
   },
   "release-it": {
