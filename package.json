@@ -21,7 +21,7 @@
     "release": "release-it"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/bitbond"
+    "registry": "https://npm.pkg.github.com/bitbond"
   },
   "release-it": {
     "github": {
@@ -33,9 +33,7 @@
       "skipChecks": true
     }
   },
-  "dependencies": {
-    "release-it": "^13.6.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
@@ -46,6 +44,7 @@
     "@vue/cli-service": "^4.3.1",
     "cross-env": "^7.0.2",
     "minimist": "^1.2.5",
+    "release-it": "^13.6.1",
     "rollup": "^2.7.3",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^5.3.0",
@@ -55,6 +54,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {
+    "tailwindcss": "^1.4.6",
     "vue": "^2.6.11"
   },
   "engines": {
