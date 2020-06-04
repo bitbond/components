@@ -1908,7 +1908,245 @@ var __vue_is_functional_template__$9 = false;
 var __vue_component__$9 = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$9,
   staticRenderFns: __vue_staticRenderFns__$9
-}, __vue_inject_styles__$9, __vue_script__$9, __vue_scope_id__$9, __vue_is_functional_template__$9, __vue_module_identifier__$9, false, undefined, undefined, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,bbIcon: __vue_component__,bbForm: __vue_component__$1,bbBtn: __vue_component__$2,bbTextInput: __vue_component__$3,bbSelectInput: __vue_component__$4,bbTextarea: __vue_component__$5,bbCopyBtn: __vue_component__$6,bbLoadingIcon: __vue_component__$7,bbChip: __vue_component__$8,bbSnackbar: __vue_component__$9});var install = function installComponents(Vue) {
+}, __vue_inject_styles__$9, __vue_script__$9, __vue_scope_id__$9, __vue_is_functional_template__$9, __vue_module_identifier__$9, false, undefined, undefined, undefined);//
+//
+//
+//
+//
+var script$a = {
+  name: "bbCard",
+  props: {
+    bgClass: {
+      type: String,
+      default: "bg-white"
+    },
+    roundedClass: {
+      type: String,
+      default: "rounded"
+    },
+    shadowClass: {
+      type: String,
+      default: "shadow"
+    }
+  },
+  computed: {
+    classes: function classes() {
+      return [this.bgClass, this.roundedClass, this.shadowClass];
+    }
+  }
+};/* script */
+var __vue_script__$a = script$a;
+/* template */
+
+var __vue_render__$a = function __vue_render__() {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    class: _vm.classes
+  }, [_vm._t("default")], 2);
+};
+
+var __vue_staticRenderFns__$a = [];
+/* style */
+
+var __vue_inject_styles__$a = undefined;
+/* scoped */
+
+var __vue_scope_id__$a = "data-v-8dea6958";
+/* module identifier */
+
+var __vue_module_identifier__$a = "data-v-8dea6958";
+/* functional template */
+
+var __vue_is_functional_template__$a = false;
+/* style inject */
+
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+var __vue_component__$a = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$a,
+  staticRenderFns: __vue_staticRenderFns__$a
+}, __vue_inject_styles__$a, __vue_script__$a, __vue_scope_id__$a, __vue_is_functional_template__$a, __vue_module_identifier__$a, false, undefined, undefined, undefined);//
+//
+//
+//
+//
+var script$b = {
+  name: "bbCardContent"
+};/* script */
+var __vue_script__$b = script$b;
+/* template */
+
+var __vue_render__$b = function __vue_render__() {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    staticClass: "p-4"
+  }, [_vm._t("default")], 2);
+};
+
+var __vue_staticRenderFns__$b = [];
+/* style */
+
+var __vue_inject_styles__$b = undefined;
+/* scoped */
+
+var __vue_scope_id__$b = "data-v-1e4a788c";
+/* module identifier */
+
+var __vue_module_identifier__$b = "data-v-1e4a788c";
+/* functional template */
+
+var __vue_is_functional_template__$b = false;
+/* style inject */
+
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+var __vue_component__$b = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$b,
+  staticRenderFns: __vue_staticRenderFns__$b
+}, __vue_inject_styles__$b, __vue_script__$b, __vue_scope_id__$b, __vue_is_functional_template__$b, __vue_module_identifier__$b, false, undefined, undefined, undefined);//
+//
+//
+//
+//
+//
+//
+var script$c = {
+  name: "bbCardTitle",
+  props: {
+    center: {
+      type: Boolean,
+      default: false
+    },
+    headerClass: {
+      type: String,
+      default: "text-2xl font-medium"
+    }
+  },
+  computed: {
+    classes: function classes() {
+      return {
+        "justify-center": this.center,
+        "justify-between": !this.center
+      };
+    }
+  }
+};/* script */
+var __vue_script__$c = script$c;
+/* template */
+
+var __vue_render__$c = function __vue_render__() {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    staticClass: "px-4 pt-4 pb-2"
+  }, [_vm._ssrNode("<h3" + _vm._ssrClass(null, ['m-0 flex items-center w-full', _vm.classes, _vm.headerClass]) + ">", "</h3>", [_vm._t("default")], 2)]);
+};
+
+var __vue_staticRenderFns__$c = [];
+/* style */
+
+var __vue_inject_styles__$c = undefined;
+/* scoped */
+
+var __vue_scope_id__$c = undefined;
+/* module identifier */
+
+var __vue_module_identifier__$c = "data-v-2eba0120";
+/* functional template */
+
+var __vue_is_functional_template__$c = false;
+/* style inject */
+
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+var __vue_component__$c = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$c,
+  staticRenderFns: __vue_staticRenderFns__$c
+}, __vue_inject_styles__$c, __vue_script__$c, __vue_scope_id__$c, __vue_is_functional_template__$c, __vue_module_identifier__$c, false, undefined, undefined, undefined);//
+//
+//
+//
+//
+var script$d = {
+  name: "bbCardActions",
+  props: {
+    left: {
+      type: Boolean,
+      default: false
+    },
+    flat: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    classes: function classes() {
+      return {
+        "justify-end": !this.left,
+        "p-4": !this.flat,
+        "p-2": this.flat
+      };
+    }
+  }
+};/* script */
+var __vue_script__$d = script$d;
+/* template */
+
+var __vue_render__$d = function __vue_render__() {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', {
+    class: ['flex', _vm.classes]
+  }, [_vm._t("default")], 2);
+};
+
+var __vue_staticRenderFns__$d = [];
+/* style */
+
+var __vue_inject_styles__$d = undefined;
+/* scoped */
+
+var __vue_scope_id__$d = undefined;
+/* module identifier */
+
+var __vue_module_identifier__$d = "data-v-58011e83";
+/* functional template */
+
+var __vue_is_functional_template__$d = false;
+/* style inject */
+
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+var __vue_component__$d = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$d,
+  staticRenderFns: __vue_staticRenderFns__$d
+}, __vue_inject_styles__$d, __vue_script__$d, __vue_scope_id__$d, __vue_is_functional_template__$d, __vue_module_identifier__$d, false, undefined, undefined, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,bbIcon: __vue_component__,bbForm: __vue_component__$1,bbBtn: __vue_component__$2,bbTextInput: __vue_component__$3,bbSelectInput: __vue_component__$4,bbTextarea: __vue_component__$5,bbCopyBtn: __vue_component__$6,bbLoadingIcon: __vue_component__$7,bbChip: __vue_component__$8,bbSnackbar: __vue_component__$9,bbCard: __vue_component__$a,bbCardContent: __vue_component__$b,bbCardTitle: __vue_component__$c,bbCardActions: __vue_component__$d});var install = function installComponents(Vue) {
   if (install.installed) return;
   install.installed = true;
   Object.entries(components).forEach(function (_ref) {
@@ -1941,4 +2179,4 @@ var plugin = {
     GlobalVue.use(plugin);
   }
 } // Default export is library as a whole, registered via Vue.use()
-exports.bbBtn=__vue_component__$2;exports.bbChip=__vue_component__$8;exports.bbCopyBtn=__vue_component__$6;exports.bbForm=__vue_component__$1;exports.bbIcon=__vue_component__;exports.bbLoadingIcon=__vue_component__$7;exports.bbSelectInput=__vue_component__$4;exports.bbSnackbar=__vue_component__$9;exports.bbTextInput=__vue_component__$3;exports.bbTextarea=__vue_component__$5;exports.default=plugin;
+exports.bbBtn=__vue_component__$2;exports.bbCard=__vue_component__$a;exports.bbCardActions=__vue_component__$d;exports.bbCardContent=__vue_component__$b;exports.bbCardTitle=__vue_component__$c;exports.bbChip=__vue_component__$8;exports.bbCopyBtn=__vue_component__$6;exports.bbForm=__vue_component__$1;exports.bbIcon=__vue_component__;exports.bbLoadingIcon=__vue_component__$7;exports.bbSelectInput=__vue_component__$4;exports.bbSnackbar=__vue_component__$9;exports.bbTextInput=__vue_component__$3;exports.bbTextarea=__vue_component__$5;exports.default=plugin;
