@@ -6,6 +6,18 @@
     <bb-btn>Click me</bb-btn>
 
     <bb-select-input v-model="select" :options="['a', 'b', 'c']" />
+
+    <div class="w-1/2">
+      <bb-card>
+        <bb-card-title>Title</bb-card-title>
+        <bb-card-content>
+          <p>Summer is here</p>
+        </bb-card-content>
+        <bb-card-actions>
+          <bb-btn>Click me</bb-btn>
+        </bb-card-actions>
+      </bb-card>
+    </div>
   </div>
 </template>
 
