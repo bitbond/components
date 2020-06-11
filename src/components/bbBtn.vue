@@ -13,7 +13,7 @@
         :color="loadingColorClass"
         class="mr-2"
       />
-      <div v-else>
+      <div v-else class="leading-none">
         <bb-icon
           v-if="icon"
           :name="icon"
@@ -219,6 +219,7 @@ export default {
   -o-transition: all .2s ease;
   -ms-transition: all .2s ease;
   text-decoration: none !important;
+  line-height: 0;
 }
 
 .bb-btn:focus, .bb-btn:active {
