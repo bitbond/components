@@ -653,7 +653,9 @@ var __vue_render__$2 = function __vue_render__() {
       "size": _vm.size,
       "color": _vm.loadingColorClass
     }
-  }) : _c('div', [_vm.icon ? _c('bb-icon', {
+  }) : _c('div', {
+    staticClass: "leading-none"
+  }, [_vm.icon ? _c('bb-icon', {
     class: [_vm.textColorClass, _vm.iconSize, {
       'mr-2': !_vm.circle
     }],
@@ -668,8 +670,8 @@ var __vue_staticRenderFns__$2 = [];
 
 var __vue_inject_styles__$2 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-41bfe546_0", {
-    source: ".bb-btn[data-v-41bfe546]{transition:all .2s ease;-webkit-transition:all .2s ease;-moz-transition:all .2s ease;-o-transition:all .2s ease;-ms-transition:all .2s ease;text-decoration:none!important}.bb-btn[data-v-41bfe546]:active,.bb-btn[data-v-41bfe546]:focus{outline:0!important}",
+  inject("data-v-f6874498_0", {
+    source: ".bb-btn[data-v-f6874498]{transition:all .2s ease;-webkit-transition:all .2s ease;-moz-transition:all .2s ease;-o-transition:all .2s ease;-ms-transition:all .2s ease;text-decoration:none!important;line-height:0}.bb-btn[data-v-f6874498]:active,.bb-btn[data-v-f6874498]:focus{outline:0!important}",
     map: undefined,
     media: undefined
   });
@@ -677,10 +679,10 @@ var __vue_inject_styles__$2 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$2 = "data-v-41bfe546";
+var __vue_scope_id__$2 = "data-v-f6874498";
 /* module identifier */
 
-var __vue_module_identifier__$2 = "data-v-41bfe546";
+var __vue_module_identifier__$2 = "data-v-f6874498";
 /* functional template */
 
 var __vue_is_functional_template__$2 = false;
@@ -1040,6 +1042,16 @@ var __vue_component__$3 = /*#__PURE__*/normalizeComponent({
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var script$4 = {
   name: "bbSelectInput",
   props: {
@@ -1059,7 +1071,7 @@ var script$4 = {
       type: String,
       default: "select"
     },
-    required: {
+    noMargin: {
       type: Boolean,
       default: false
     },
@@ -1069,6 +1081,9 @@ var script$4 = {
     validateOn: {
       type: String,
       default: "change"
+    },
+    defaultText: {
+      type: String
     },
     size: {
       type: String,
@@ -1109,7 +1124,7 @@ var script$4 = {
       }
     },
     inputClasses: function inputClasses() {
-      return [this.bgClasses, this.shapeClasses, this.sizeClasses, this.borderClasses, this.textColorClasses, this.textClasses, this.cursorClasses, this.textSize];
+      return ['block appearance-none w-full pr-8 rounded leading-none focus:outline-none', this.bgClasses, this.shapeClasses, this.sizeClasses, this.borderClasses, this.textColorClasses, this.textClasses, this.cursorClasses, this.textSize];
     },
     bgClasses: function bgClasses() {
       if (this.hasError) return "bg-red-100";
@@ -1132,7 +1147,7 @@ var script$4 = {
           return "h-8 px-4";
 
         default:
-          return "h-10 px-4";
+          return "h-12 px-4";
       }
     },
     textColorClasses: function textColorClasses() {
@@ -1183,12 +1198,14 @@ var __vue_render__$4 = function __vue_render__() {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
-    staticClass: "flex flex-col mb-6"
-  }, [_vm.label ? _vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.name) + _vm._ssrClass(null, _vm.labelClasses) + " data-v-5088bd29>", "</label>", [_vm._ssrNode(_vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n    ") + (_vm.required ? "<span data-v-5088bd29>*</span>" : "<!---->"))], 2) : _vm._ssrNode("<label" + _vm._ssrAttr("for", _vm.name) + _vm._ssrClass(null, _vm.labelClasses) + " data-v-5088bd29>", "</label>", [_vm._t("label")], 2), _vm._ssrNode(" <select" + _vm._ssrAttr("name", _vm.name) + _vm._ssrAttr("value", _vm.value) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, ['bb-select-input w-full leading-none'].concat(_vm.inputClasses)) + " data-v-5088bd29>" + _vm._ssrList(_vm.options, function (option, i) {
-    return "<option" + _vm._ssrAttr("value", _vm.valFor(option)) + " data-v-5088bd29>" + _vm._ssrEscape(_vm._s(_vm.textFor(option))) + "</option>";
-  }) + "</select> <div" + _vm._ssrClass(null, ['relative', _vm.labelClasses]) + " data-v-5088bd29><div class=\"text-red-500 text-sm absolute\"" + _vm._ssrStyle(null, null, {
+    class: [{
+      'mb-6': !_vm.noMargin
+    }]
+  }, [_vm._ssrNode((_vm.label ? "<label" + _vm._ssrAttr("for", _vm.name) + _vm._ssrClass(null, _vm.labelClasses) + " data-v-7f7c4f0a>" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label>" : "<!---->") + " <div class=\"relative\" data-v-7f7c4f0a><select" + _vm._ssrAttr("name", _vm.name) + _vm._ssrAttr("value", _vm.value) + _vm._ssrAttrs(_vm.$attrs) + _vm._ssrClass(null, _vm.inputClasses) + " data-v-7f7c4f0a>" + (_vm.defaultText ? "<option value hidden=\"hidden\" data-v-7f7c4f0a>" + _vm._ssrEscape(_vm._s(_vm.defaultText)) + "</option>" : "<!---->") + " " + _vm._ssrList(_vm.options, function (option, i) {
+    return "<option" + _vm._ssrAttr("value", _vm.valFor(option)) + " data-v-7f7c4f0a>" + _vm._ssrEscape("\n        " + _vm._s(_vm.textFor(option)) + "\n      ") + "</option>";
+  }) + "</select> <div class=\"pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700\" data-v-7f7c4f0a><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" class=\"fill-current h-4 w-4\" data-v-7f7c4f0a><path d=\"M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z\" data-v-7f7c4f0a></path></svg></div></div> <div class=\"relative\" data-v-7f7c4f0a><div class=\"g-text-field-error text-red-500 text-sm absolute\"" + _vm._ssrStyle(null, null, {
     display: _vm.hasError ? '' : 'none'
-  }) + " data-v-5088bd29>" + _vm._ssrEscape(_vm._s(_vm.errors[0])) + "</div></div>")], 2);
+  }) + " data-v-7f7c4f0a>" + _vm._ssrEscape("\n      " + _vm._s(_vm.errors[0]) + "\n    ") + "</div></div>")]);
 };
 
 var __vue_staticRenderFns__$4 = [];
@@ -1196,8 +1213,8 @@ var __vue_staticRenderFns__$4 = [];
 
 var __vue_inject_styles__$4 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-5088bd29_0", {
-    source: ".bb-select-input[data-v-5088bd29]{display:block;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}.bb-select-input[data-v-5088bd29]:active,.bb-select-input[data-v-5088bd29]:focus{-moz-appearance:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}",
+  inject("data-v-7f7c4f0a_0", {
+    source: ".bb-select-input[data-v-7f7c4f0a]{display:block;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}.bb-select-input[data-v-7f7c4f0a]:active,.bb-select-input[data-v-7f7c4f0a]:focus{-moz-appearance:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}",
     map: undefined,
     media: undefined
   });
@@ -1205,10 +1222,10 @@ var __vue_inject_styles__$4 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$4 = "data-v-5088bd29";
+var __vue_scope_id__$4 = "data-v-7f7c4f0a";
 /* module identifier */
 
-var __vue_module_identifier__$4 = "data-v-5088bd29";
+var __vue_module_identifier__$4 = "data-v-7f7c4f0a";
 /* functional template */
 
 var __vue_is_functional_template__$4 = false;

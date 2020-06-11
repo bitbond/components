@@ -574,7 +574,9 @@ var __vue_render__$2 = function () {
       "size": _vm.size,
       "color": _vm.loadingColorClass
     }
-  }) : _c('div', [_vm.icon ? _c('bb-icon', {
+  }) : _c('div', {
+    staticClass: "leading-none"
+  }, [_vm.icon ? _c('bb-icon', {
     class: [_vm.textColorClass, _vm.iconSize, {
       'mr-2': !_vm.circle
     }],
@@ -589,8 +591,8 @@ var __vue_staticRenderFns__$2 = [];
 
 const __vue_inject_styles__$2 = function (inject) {
   if (!inject) return;
-  inject("data-v-41bfe546_0", {
-    source: ".bb-btn[data-v-41bfe546]{transition:all .2s ease;-webkit-transition:all .2s ease;-moz-transition:all .2s ease;-o-transition:all .2s ease;-ms-transition:all .2s ease;text-decoration:none!important}.bb-btn[data-v-41bfe546]:active,.bb-btn[data-v-41bfe546]:focus{outline:0!important}",
+  inject("data-v-f6874498_0", {
+    source: ".bb-btn[data-v-f6874498]{transition:all .2s ease;-webkit-transition:all .2s ease;-moz-transition:all .2s ease;-o-transition:all .2s ease;-ms-transition:all .2s ease;text-decoration:none!important;line-height:0}.bb-btn[data-v-f6874498]:active,.bb-btn[data-v-f6874498]:focus{outline:0!important}",
     map: undefined,
     media: undefined
   });
@@ -598,7 +600,7 @@ const __vue_inject_styles__$2 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$2 = "data-v-41bfe546";
+const __vue_scope_id__$2 = "data-v-f6874498";
 /* module identifier */
 
 const __vue_module_identifier__$2 = undefined;
@@ -1030,6 +1032,16 @@ const __vue_component__$3 = /*#__PURE__*/normalizeComponent({
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var script$4 = {
   name: "bbSelectInput",
   props: {
@@ -1049,7 +1061,7 @@ var script$4 = {
       type: String,
       default: "select"
     },
-    required: {
+    noMargin: {
       type: Boolean,
       default: false
     },
@@ -1059,6 +1071,9 @@ var script$4 = {
     validateOn: {
       type: String,
       default: "change"
+    },
+    defaultText: {
+      type: String
     },
     size: {
       type: String,
@@ -1102,7 +1117,7 @@ var script$4 = {
     },
 
     inputClasses() {
-      return [this.bgClasses, this.shapeClasses, this.sizeClasses, this.borderClasses, this.textColorClasses, this.textClasses, this.cursorClasses, this.textSize];
+      return ['block appearance-none w-full pr-8 rounded leading-none focus:outline-none', this.bgClasses, this.shapeClasses, this.sizeClasses, this.borderClasses, this.textColorClasses, this.textClasses, this.cursorClasses, this.textSize];
     },
 
     bgClasses() {
@@ -1129,7 +1144,7 @@ var script$4 = {
           return "h-8 px-4";
 
         default:
-          return "h-10 px-4";
+          return "h-12 px-4";
       }
     },
 
@@ -1188,34 +1203,50 @@ var __vue_render__$4 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
-    staticClass: "flex flex-col mb-6"
+    class: [{
+      'mb-6': !_vm.noMargin
+    }]
   }, [_vm.label ? _c('label', {
     class: _vm.labelClasses,
     attrs: {
       "for": _vm.name
     }
-  }, [_vm._v("\n    " + _vm._s(_vm.label) + "\n    "), _vm.required ? _c('span', [_vm._v("*")]) : _vm._e()]) : _c('label', {
-    class: _vm.labelClasses,
-    attrs: {
-      "for": _vm.name
-    }
-  }, [_vm._t("label")], 2), _vm._v(" "), _c('select', _vm._g(_vm._b({
-    class: ['bb-select-input w-full leading-none'].concat(_vm.inputClasses),
+  }, [_vm._v("\n    " + _vm._s(_vm.label) + "\n  ")]) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "relative"
+  }, [_c('select', _vm._g(_vm._b({
+    class: _vm.inputClasses,
     attrs: {
       "name": _vm.name
     },
     domProps: {
       "value": _vm.value
     }
-  }, 'select', _vm.$attrs, false), _vm.listeners), _vm._l(_vm.options, function (option, i) {
+  }, 'select', _vm.$attrs, false), _vm.listeners), [_vm.defaultText ? _c('option', {
+    attrs: {
+      "value": "",
+      "hidden": ""
+    }
+  }, [_vm._v(_vm._s(_vm.defaultText))]) : _vm._e(), _vm._v(" "), _vm._l(_vm.options, function (option, i) {
     return _c('option', {
       key: i,
       domProps: {
         "value": _vm.valFor(option)
       }
-    }, [_vm._v(_vm._s(_vm.textFor(option)))]);
-  }), 0), _vm._v(" "), _c('div', {
-    class: ['relative', _vm.labelClasses]
+    }, [_vm._v("\n        " + _vm._s(_vm.textFor(option)) + "\n      ")]);
+  })], 2), _vm._v(" "), _c('div', {
+    staticClass: "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+  }, [_c('svg', {
+    staticClass: "fill-current h-4 w-4",
+    attrs: {
+      "xmlns": "http://www.w3.org/2000/svg",
+      "viewBox": "0 0 20 20"
+    }
+  }, [_c('path', {
+    attrs: {
+      "d": "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+    }
+  })])])]), _vm._v(" "), _c('div', {
+    staticClass: "relative"
   }, [_c('div', {
     directives: [{
       name: "show",
@@ -1223,8 +1254,8 @@ var __vue_render__$4 = function () {
       value: _vm.hasError,
       expression: "hasError"
     }],
-    staticClass: "text-red-500 text-sm absolute"
-  }, [_vm._v(_vm._s(_vm.errors[0]))])])]);
+    staticClass: "g-text-field-error text-red-500 text-sm absolute"
+  }, [_vm._v("\n      " + _vm._s(_vm.errors[0]) + "\n    ")])])]);
 };
 
 var __vue_staticRenderFns__$4 = [];
@@ -1232,8 +1263,8 @@ var __vue_staticRenderFns__$4 = [];
 
 const __vue_inject_styles__$4 = function (inject) {
   if (!inject) return;
-  inject("data-v-5088bd29_0", {
-    source: ".bb-select-input[data-v-5088bd29]{display:block;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}.bb-select-input[data-v-5088bd29]:active,.bb-select-input[data-v-5088bd29]:focus{-moz-appearance:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}",
+  inject("data-v-7f7c4f0a_0", {
+    source: ".bb-select-input[data-v-7f7c4f0a]{display:block;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}.bb-select-input[data-v-7f7c4f0a]:active,.bb-select-input[data-v-7f7c4f0a]:focus{-moz-appearance:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;box-shadow:none;outline:0;text-shadow:0 0 0 #000}",
     map: undefined,
     media: undefined
   });
@@ -1241,7 +1272,7 @@ const __vue_inject_styles__$4 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$4 = "data-v-5088bd29";
+const __vue_scope_id__$4 = "data-v-7f7c4f0a";
 /* module identifier */
 
 const __vue_module_identifier__$4 = undefined;
