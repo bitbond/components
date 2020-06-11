@@ -1,23 +1,33 @@
 <template>
-  <div class="flex flex-col mb-6">
+  <div :class="[{ 'mb-6': !noMargin }]">
     <label v-if="label" :for="name" :class="labelClasses">
       {{ label }}
-      <span v-if="required">*</span>
     </label>
-    <label v-else :for="name" :class="labelClasses">
-      <slot name="label" />
-    </label>
-    <select
-      :class="['bb-select-input w-full leading-none', ...inputClasses]"
-      :name="name"
-      :value="value"
-      v-bind="$attrs"
-      v-on="listeners"
-    >
-      <option v-for="(option, i) in options" :key="i" :value="valFor(option)">{{ textFor(option) }}</option>
-    </select>
-    <div :class="['relative', labelClasses]">
-      <div v-show="hasError" class="text-red-500 text-sm absolute">{{ errors[0] }}</div>
+    <div class="relative">
+      <select
+        :value="value"
+        v-bind="$attrs"
+        v-on="listeners"
+        :name="name"
+        :class="inputClasses">
+        <option v-if="defaultText" value="" hidden>{{ defaultText }}</option>
+        <option
+          v-for="(option, i) in options"
+          :key="i"
+          :value="valFor(option)">
+          {{ textFor(option) }}
+        </option>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+      </div>
+    </div>
+    <div class="relative">
+      <div
+        v-show="hasError"
+        class="g-text-field-error text-red-500 text-sm absolute">
+        {{ errors[0] }}
+      </div>
     </div>
   </div>
 </template>
@@ -31,9 +41,10 @@ export default {
     value: { type: [String, Number], default: "" },
     label: { type: String, default: null },
     name: { type: String, default: "select" },
-    required: { type: Boolean, default: false },
+    noMargin: { type: Boolean, default: false },
     rules: { type: Array },
     validateOn: { type: String, default: "change" },
+    defaultText: { type: String },
     size: {
       type: String,
       default: "medium",
@@ -76,6 +87,7 @@ export default {
 
     inputClasses() {
       return [
+        'block appearance-none w-full pr-8 rounded leading-none focus:outline-none',
         this.bgClasses,
         this.shapeClasses,
         this.sizeClasses,
@@ -109,7 +121,7 @@ export default {
         case "small":
           return "h-8 px-4";
         default:
-          return "h-10 px-4";
+          return "h-12 px-4";
       }
     },
 
