@@ -55,8 +55,8 @@
     "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {
-    "tailwindcss": "^1.4.6",
-    "vue": "^2.6.11"
+    "tailwindcss": ">= 1.4.6",
+    "vue": "2.x"
   },
   "engines": {
     "node": ">=10"
