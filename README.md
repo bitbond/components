@@ -1,5 +1,4 @@
 # Bitbond Vue Components
-<a href="https://www.npmjs.com/package/@bitbond/components"><img src="https://img.shields.io/npm/v/@bitbond/components.svg?sanitize=true" alt="Version"></a>
 
 ## Installation
 Install the npm package:
